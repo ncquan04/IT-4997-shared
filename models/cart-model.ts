@@ -4,4 +4,5 @@ export interface ICart {
   variantId: string;
   quantity: number;
   userId: string;
+  branchId?: string;
 }

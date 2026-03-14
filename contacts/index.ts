@@ -10,6 +10,11 @@ export class Contacts {
     static EVALUATION_PATH = "api/evaluations";
     static REPORT_PATH = "api/reports";
     static NOTIFICATION = "api/notifications";
+    static BRANCH_PATH = "api/branches";
+    static INVENTORY_PATH = "api/inventory";
+    static STOCK_PATH = "api/stock";
+    static WARRANTY_PATH = "api/warranty";
+    static SUPPLIER_PATH = "api/suppliers";
     static API_CONFIG = {
         AUTH: {
             LOGIN: {
@@ -264,6 +269,29 @@ export class Contacts {
             REFUNDED: 26, // Hoàn tiền
             CANCELLED: 27, // Hủy thanh toán
         },
+        // Nhập/Xuất kho
+        Stock: {
+            PENDING: 30,
+            APPROVED: 31,
+            COMPLETED: 32,
+            CANCELLED: 33,
+        },
+        // Điều chuyển nội bộ
+        Transfer: {
+            PENDING: 40,
+            IN_TRANSIT: 41,
+            COMPLETED: 42,
+            CANCELLED: 43,
+        },
+        // Bảo hành
+        Warranty: {
+            RECEIVED: 50,
+            DIAGNOSING: 51,
+            REPAIRING: 52,
+            WAITING_PARTS: 53,
+            COMPLETED: 54,
+            RETURNED: 55,
+        },
         /*
          ** check validate code checkout session
          */
@@ -297,6 +325,13 @@ export class Contacts {
         STANDARD: "STANDARD",
         EXPRESS: "EXPRESS",
         PICKUP: "PICKUP",
+    };
+
+    static ExportReason = {
+        SALE: "SALE",
+        RETURN_TO_SUPPLIER: "RETURN_TO_SUPPLIER",
+        DAMAGED: "DAMAGED",
+        OTHER: "OTHER",
     };
 
     static Sort = {

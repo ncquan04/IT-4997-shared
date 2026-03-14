@@ -2,21 +2,23 @@ import { Contacts } from "../contacts";
 const STATUS_EVALUATION = Contacts.Status.Evaluation;
 
 export interface ISpecItem {
-  key: string; 
-  value: string; 
+  key: string;
+  value: string;
+  numericValue?: number;
+  unit?: string;
 }
 
-export interface IProductVariant{
+export interface IProductVariant {
     _id: string;
-    version: string;
-    colorName: string;
-    hexcode: string;
+    variantName: string;
+    attributes: ISpecItem[];
     images: string[];
-    quantity: number;
     price: number;
     salePrice?: number;
+    costPrice: number;
     sku: string;
 }
+
 export interface IProduct {
     _id: string;
     title: string;
@@ -27,8 +29,8 @@ export interface IProduct {
     variants: IProductVariant[];
     categoryId: string;
     isHide: (typeof STATUS_EVALUATION)[keyof typeof STATUS_EVALUATION];
-    // imageUrl: string[];
     rating?: number;
+    warrantyPeriod?: number;
 }
 
 export class Product implements IProduct {
@@ -41,8 +43,9 @@ export class Product implements IProduct {
     variants: IProductVariant[];
     categoryId: string;
     isHide: (typeof STATUS_EVALUATION)[keyof typeof STATUS_EVALUATION];
-    // imageUrl: string[];
     rating?: number;
+    warrantyPeriod?: number;
+
     constructor(obj: Partial<IProduct> = {}) {
         const {
             _id = "",
@@ -54,8 +57,8 @@ export class Product implements IProduct {
             variants = [],
             categoryId = "",
             isHide = STATUS_EVALUATION.HIDE,
-            // imageUrl = [],
             rating,
+            warrantyPeriod,
         } = obj;
         this._id = _id;
         this.title = title;
@@ -66,7 +69,7 @@ export class Product implements IProduct {
         this.variants = variants;
         this.categoryId = categoryId;
         this.isHide = isHide;
-        // this.imageUrl = imageUrl;
         this.rating = rating;
+        this.warrantyPeriod = warrantyPeriod;
     }
 }

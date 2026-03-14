@@ -1,6 +1,9 @@
 export enum UserRole {
     USER = "USER",
     ADMIN = "ADMIN",
+    WAREHOUSE = "WAREHOUSE",
+    SALES = "SALES",
+    TECHNICIAN = "TECHNICIAN",
 }
 
 export interface IUser {
@@ -13,6 +16,7 @@ export interface IUser {
     address: string[];
     dateOfBirth: number; //timestamp
     verifyCode: string;
+    branchId?: string;
 }
 
 export class User implements IUser {
@@ -25,6 +29,7 @@ export class User implements IUser {
     address: string[];
     dateOfBirth: number;
     verifyCode: string;
+    branchId?: string;
 
     constructor(obj: Partial<IUser> = {}) {
         const {
@@ -37,6 +42,7 @@ export class User implements IUser {
             address = [],
             dateOfBirth = Date.now(),
             verifyCode = "",
+            branchId,
         } = obj;
 
         this._id = _id;
@@ -48,5 +54,6 @@ export class User implements IUser {
         this.address = address;
         this.dateOfBirth = new Date(dateOfBirth).getTime();
         this.verifyCode = verifyCode;
+        this.branchId = branchId;
     }
 }

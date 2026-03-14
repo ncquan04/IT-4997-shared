@@ -1,8 +1,8 @@
-export type NotificationTye = "ORDER" | "PRODUCT" | "PAYMENT";
+export type NotificationType = "ORDER" | "PRODUCT" | "PAYMENT" | "WARRANTY" | "STOCK";
 
 export interface INotification {
     _id: string;
-    notificationType: string;
+    notificationType: NotificationType;
     title: string;
     message: string;
     referenceId: string;
@@ -13,7 +13,7 @@ export interface INotification {
 
 export class Notification implements INotification {
     _id: string;
-    notificationType: string;
+    notificationType: NotificationType;
     title: string;
     message: string;
     referenceId: string;
@@ -23,7 +23,7 @@ export class Notification implements INotification {
     constructor(obj: Partial<INotification> = {}) {
         const {
             _id = "",
-            notificationType = "",
+            notificationType = "ORDER",
             title = "",
             message = "",
             referenceId = "",
