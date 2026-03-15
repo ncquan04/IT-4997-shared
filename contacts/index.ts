@@ -257,6 +257,41 @@ export class Contacts {
         BODY: ["notificationId"],
       },
     },
+    BRANCH: {
+      GET_ALL: {
+        URL: `${Contacts.BRANCH_PATH}`,
+        METHOD: "GET",
+        QUERY: ["isActive"],
+      },
+      GET_DETAIL: (id: string) => ({
+        URL: `${Contacts.BRANCH_PATH}/${id}`,
+        METHOD: "GET",
+      }),
+      UPDATE_STATUS: (id: string) => ({
+        URL: `${Contacts.BRANCH_PATH}/${id}/status`,
+        METHOD: "PATCH",
+        BODY: ["isActive"],
+      }),
+    },
+    INVENTORY: {
+      GET_ALL: {
+        URL: `${Contacts.INVENTORY_PATH}`,
+        METHOD: "GET",
+        QUERY: [
+          "search",
+          "branchId",
+          "productId",
+          "variantId",
+          "inStock",
+          "page",
+          "limit",
+        ],
+      },
+      GET_DETAIL: (id: string) => ({
+        URL: `${Contacts.INVENTORY_PATH}/${id}`,
+        METHOD: "GET",
+      }),
+    },
   };
   static Status = {
     //evaluation
