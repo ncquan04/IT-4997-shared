@@ -52,6 +52,12 @@ export class Contacts {
         URL: `${Contacts.PRODUCT_PATH}/${id}`,
         METHOD: "GET",
       }),
+      // GET: /products/:id/availability?variantId=...
+      GET_AVAILABILITY: (id: string) => ({
+        URL: `${Contacts.PRODUCT_PATH}/${id}/availability`,
+        METHOD: "GET",
+        QUERY: ["variantId"],
+      }),
       // POST: /products (Admin only)
       CREATE: {
         URL: `${Contacts.PRODUCT_PATH}`,
