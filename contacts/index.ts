@@ -13,6 +13,7 @@ export class Contacts {
   static BRANCH_PATH = "api/branches";
   static INVENTORY_PATH = "api/inventory";
   static STOCK_PATH = "api/stock";
+  static STOCK_IMPORT_PATH = "api/stock-imports";
   static WARRANTY_PATH = "api/warranty";
   static SUPPLIER_PATH = "api/suppliers";
   static API_CONFIG = {
@@ -297,6 +298,27 @@ export class Contacts {
         URL: `${Contacts.INVENTORY_PATH}/${id}`,
         METHOD: "GET",
       }),
+    },
+    STOCK_IMPORT: {
+      GET_ALL: {
+        URL: `${Contacts.STOCK_IMPORT_PATH}`,
+        METHOD: "GET",
+        QUERY: ["branchId", "status", "page", "limit"],
+      },
+      GET_DETAIL: (id: string) => ({
+        URL: `${Contacts.STOCK_IMPORT_PATH}/${id}`,
+        METHOD: "GET",
+      }),
+      CREATE: {
+        URL: `${Contacts.STOCK_IMPORT_PATH}`,
+        METHOD: "POST",
+      },
+    },
+    SUPPLIER: {
+      GET_ALL: {
+        URL: `${Contacts.SUPPLIER_PATH}`,
+        METHOD: "GET",
+      },
     },
   };
   static Status = {
