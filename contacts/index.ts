@@ -313,6 +313,10 @@ export class Contacts {
         URL: `${Contacts.STOCK_IMPORT_PATH}`,
         METHOD: "POST",
       },
+      UPDATE_STATUS: (id: string) => ({
+        URL: `${Contacts.STOCK_IMPORT_PATH}/${id}/status`,
+        METHOD: "PATCH",
+      }),
     },
     SUPPLIER: {
       GET_ALL: {
