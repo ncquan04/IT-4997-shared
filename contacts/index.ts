@@ -354,7 +354,7 @@ export class Contacts {
     // Nhập/Xuất kho
     Stock: {
       PENDING: 30,
-      APPROVED: 31,
+      // APPROVED: 31,
       COMPLETED: 32,
       CANCELLED: 33,
     },
