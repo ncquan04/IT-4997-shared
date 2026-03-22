@@ -14,6 +14,7 @@ export class Contacts {
   static INVENTORY_PATH = "api/inventory";
   static STOCK_PATH = "api/stock";
   static STOCK_IMPORT_PATH = "api/stock-imports";
+  static STOCK_EXPORT_PATH = "api/stock-exports";
   static WARRANTY_PATH = "api/warranty";
   static SUPPLIER_PATH = "api/suppliers";
   static API_CONFIG = {
@@ -298,6 +299,11 @@ export class Contacts {
         URL: `${Contacts.INVENTORY_PATH}/${id}`,
         METHOD: "GET",
       }),
+      LOOKUP_IMEI: {
+        URL: `${Contacts.INVENTORY_PATH}/lookup-imei`,
+        METHOD: "GET",
+        QUERY: ["branchId", "imei"],
+      },
     },
     STOCK_IMPORT: {
       GET_ALL: {
@@ -315,6 +321,25 @@ export class Contacts {
       },
       UPDATE_STATUS: (id: string) => ({
         URL: `${Contacts.STOCK_IMPORT_PATH}/${id}/status`,
+        METHOD: "PATCH",
+      }),
+    },
+    STOCK_EXPORT: {
+      GET_ALL: {
+        URL: `${Contacts.STOCK_EXPORT_PATH}`,
+        METHOD: "GET",
+        QUERY: ["branchId", "status", "page", "limit"],
+      },
+      GET_DETAIL: (id: string) => ({
+        URL: `${Contacts.STOCK_EXPORT_PATH}/${id}`,
+        METHOD: "GET",
+      }),
+      CREATE: {
+        URL: `${Contacts.STOCK_EXPORT_PATH}`,
+        METHOD: "POST",
+      },
+      UPDATE_STATUS: (id: string) => ({
+        URL: `${Contacts.STOCK_EXPORT_PATH}/${id}/status`,
         METHOD: "PATCH",
       }),
     },
