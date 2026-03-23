@@ -349,6 +349,38 @@ export class Contacts {
         METHOD: "GET",
       },
     },
+    WARRANTY: {
+      GET_ALL: {
+        URL: `${Contacts.WARRANTY_PATH}`,
+        METHOD: "GET",
+        QUERY: ["branchId", "status", "imei", "page", "limit"],
+      },
+      GET_DETAIL: (id: string) => ({
+        URL: `${Contacts.WARRANTY_PATH}/${id}`,
+        METHOD: "GET",
+      }),
+      CREATE: {
+        URL: `${Contacts.WARRANTY_PATH}`,
+        METHOD: "POST",
+      },
+      UPDATE_STATUS: (id: string) => ({
+        URL: `${Contacts.WARRANTY_PATH}/${id}/status`,
+        METHOD: "PATCH",
+      }),
+      LOOKUP_IMEI: {
+        URL: `${Contacts.WARRANTY_PATH}/lookup`,
+        METHOD: "GET",
+        QUERY: ["imei"],
+      },
+      GET_REPAIR_LOGS: (id: string) => ({
+        URL: `${Contacts.WARRANTY_PATH}/${id}/repair-logs`,
+        METHOD: "GET",
+      }),
+      ADD_REPAIR_LOG: (id: string) => ({
+        URL: `${Contacts.WARRANTY_PATH}/${id}/repair-logs`,
+        METHOD: "POST",
+      }),
+    },
   };
   static Status = {
     //evaluation
