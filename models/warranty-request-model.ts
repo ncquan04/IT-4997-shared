@@ -5,7 +5,7 @@ const STATUS_WARRANTY = Contacts.Status.Warranty;
 export interface IWarrantyRequest {
     _id: string;
     customerId: string;
-    orderId: string;
+    orderId?: string;
     productId: string;
     variantId: string;
     branchId: string;
