@@ -372,6 +372,11 @@ export class Contacts {
                 METHOD: "GET",
                 QUERY: ["imei"],
             },
+            IMEI_STOCK_LOOKUP: {
+                URL: `${Contacts.WARRANTY_PATH}/imei-stock`,
+                METHOD: "GET",
+                QUERY: ["imei"],
+            },
             GET_REPAIR_LOGS: (id: string) => ({
                 URL: `${Contacts.WARRANTY_PATH}/${id}/repair-logs`,
                 METHOD: "GET",
@@ -468,6 +473,7 @@ export class Contacts {
 
     static ExportReason = {
         SALE: "SALE",
+        ONLINE_SALE: "ONLINE_SALE",
         RETURN_TO_SUPPLIER: "RETURN_TO_SUPPLIER",
         DAMAGED: "DAMAGED",
         OTHER: "OTHER",
