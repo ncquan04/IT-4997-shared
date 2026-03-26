@@ -355,6 +355,11 @@ export class Contacts {
                 METHOD: "GET",
                 QUERY: ["branchId", "status", "imei", "page", "limit"],
             },
+            MY_WARRANTIES: {
+                URL: `${Contacts.WARRANTY_PATH}/my`,
+                METHOD: "GET",
+                QUERY: ["status", "page", "limit"],
+            },
             GET_DETAIL: (id: string) => ({
                 URL: `${Contacts.WARRANTY_PATH}/${id}`,
                 METHOD: "GET",
