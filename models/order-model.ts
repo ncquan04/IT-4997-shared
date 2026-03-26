@@ -24,6 +24,13 @@ export interface IOrderStatusHistory {
     note?: string;
 }
 
+export interface IOrderImeiAssignment {
+    productId: string;
+    variantId: string;
+    branchId: string;
+    imeiList: string[];
+}
+
 export interface IOrder {
     _id: string;
     listProduct: IProductItem[];
@@ -36,4 +43,5 @@ export interface IOrder {
     statusOrder: (typeof STATUS_ORDER)[keyof typeof STATUS_ORDER];
     branchId?: string;
     statusHistory?: IOrderStatusHistory[];
+    imeiAssignments?: IOrderImeiAssignment[];
 }
