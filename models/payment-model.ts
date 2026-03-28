@@ -12,4 +12,6 @@ export interface IPayment {
     discount: number;
     delivery: (typeof DELIVERY)[keyof typeof DELIVERY];
     status: (typeof STATUS_PAYMENT)[keyof typeof STATUS_PAYMENT];
+    couponCode?: string;
+    couponDiscount?: number;
 }

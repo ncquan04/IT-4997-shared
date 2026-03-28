@@ -17,6 +17,7 @@ export class Contacts {
     static STOCK_EXPORT_PATH = "api/stock-exports";
     static WARRANTY_PATH = "api/warranty";
     static SUPPLIER_PATH = "api/suppliers";
+    static COUPON_PATH = "api/coupons";
     static API_CONFIG = {
         AUTH: {
             LOGIN: {
@@ -347,6 +348,28 @@ export class Contacts {
             GET_ALL: {
                 URL: `${Contacts.SUPPLIER_PATH}`,
                 METHOD: "GET",
+            },
+        },
+        COUPON: {
+            GET_ALL: {
+                URL: `${Contacts.COUPON_PATH}`,
+                METHOD: "GET",
+            },
+            CREATE: {
+                URL: `${Contacts.COUPON_PATH}`,
+                METHOD: "POST",
+            },
+            UPDATE: (id: string) => ({
+                URL: `${Contacts.COUPON_PATH}/${id}`,
+                METHOD: "PUT",
+            }),
+            DELETE: (id: string) => ({
+                URL: `${Contacts.COUPON_PATH}/${id}`,
+                METHOD: "DELETE",
+            }),
+            VALIDATE: {
+                URL: `${Contacts.COUPON_PATH}/validate`,
+                METHOD: "POST",
             },
         },
         WARRANTY: {
