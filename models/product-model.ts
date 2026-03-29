@@ -9,67 +9,68 @@ export interface ISpecItem {
 }
 
 export interface IProductVariant {
-    _id: string;
-    variantName: string;
-    attributes: ISpecItem[];
-    images: string[];
-    price: number;
-    salePrice?: number;
-    costPrice: number;
-    sku: string;
+  _id: string;
+  variantName: string;
+  attributes: ISpecItem[];
+  images: string[];
+  price: number;
+  salePrice?: number;
+  costPrice: number;
+  sku: string;
+  effectiveDiscountPrice?: number; // set by DiscountProgram; takes priority over salePrice
 }
 
 export interface IProduct {
-    _id: string;
-    title: string;
-    brand: string;
-    description: string;
-    descriptionDetail: string;
-    specifications: ISpecItem[];
-    variants: IProductVariant[];
-    categoryId: string;
-    isHide: (typeof STATUS_EVALUATION)[keyof typeof STATUS_EVALUATION];
-    rating?: number;
-    warrantyPeriod?: number;
+  _id: string;
+  title: string;
+  brand: string;
+  description: string;
+  descriptionDetail: string;
+  specifications: ISpecItem[];
+  variants: IProductVariant[];
+  categoryId: string;
+  isHide: (typeof STATUS_EVALUATION)[keyof typeof STATUS_EVALUATION];
+  rating?: number;
+  warrantyPeriod?: number;
 }
 
 export class Product implements IProduct {
-    _id: string;
-    title: string;
-    brand: string;
-    description: string;
-    descriptionDetail: string;
-    specifications: ISpecItem[];
-    variants: IProductVariant[];
-    categoryId: string;
-    isHide: (typeof STATUS_EVALUATION)[keyof typeof STATUS_EVALUATION];
-    rating?: number;
-    warrantyPeriod?: number;
+  _id: string;
+  title: string;
+  brand: string;
+  description: string;
+  descriptionDetail: string;
+  specifications: ISpecItem[];
+  variants: IProductVariant[];
+  categoryId: string;
+  isHide: (typeof STATUS_EVALUATION)[keyof typeof STATUS_EVALUATION];
+  rating?: number;
+  warrantyPeriod?: number;
 
-    constructor(obj: Partial<IProduct> = {}) {
-        const {
-            _id = "",
-            title = "",
-            brand = "",
-            description = "",
-            descriptionDetail = "",
-            specifications = [],
-            variants = [],
-            categoryId = "",
-            isHide = STATUS_EVALUATION.HIDE,
-            rating,
-            warrantyPeriod,
-        } = obj;
-        this._id = _id;
-        this.title = title;
-        this.brand = brand;
-        this.description = description;
-        this.descriptionDetail = descriptionDetail;
-        this.specifications = specifications;
-        this.variants = variants;
-        this.categoryId = categoryId;
-        this.isHide = isHide;
-        this.rating = rating;
-        this.warrantyPeriod = warrantyPeriod;
-    }
+  constructor(obj: Partial<IProduct> = {}) {
+    const {
+      _id = "",
+      title = "",
+      brand = "",
+      description = "",
+      descriptionDetail = "",
+      specifications = [],
+      variants = [],
+      categoryId = "",
+      isHide = STATUS_EVALUATION.HIDE,
+      rating,
+      warrantyPeriod,
+    } = obj;
+    this._id = _id;
+    this.title = title;
+    this.brand = brand;
+    this.description = description;
+    this.descriptionDetail = descriptionDetail;
+    this.specifications = specifications;
+    this.variants = variants;
+    this.categoryId = categoryId;
+    this.isHide = isHide;
+    this.rating = rating;
+    this.warrantyPeriod = warrantyPeriod;
+  }
 }
