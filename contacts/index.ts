@@ -432,6 +432,16 @@ export class Contacts {
         URL: `${Contacts.WARRANTY_PATH}/${id}/repair-logs`,
         METHOD: "POST",
       }),
+      REPAIR_LOG_HISTORY: {
+        URL: `${Contacts.WARRANTY_PATH}/repair-logs/history`,
+        METHOD: "GET",
+        QUERY: ["imei"],
+      },
+      PUBLIC_REPAIR_HISTORY: {
+        URL: `${Contacts.WARRANTY_PATH}/public/repair-history`,
+        METHOD: "GET",
+        QUERY: ["imei"],
+      },
     },
   };
   static Status = {
