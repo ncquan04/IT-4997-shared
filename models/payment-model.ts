@@ -14,4 +14,13 @@ export interface IPayment {
     status: (typeof STATUS_PAYMENT)[keyof typeof STATUS_PAYMENT];
     couponCode?: string;
     couponDiscount?: number;
+    // ── Loyalty ──────────────────────────────────────
+    /** Số tiền giảm do chiết khấu hạng thành viên */
+    memberDiscount?: number;
+    /** Số điểm tích được từ đơn này */
+    pointsEarned?: number;
+    /** Số điểm khách hàng đã dùng để đổi */
+    pointsRedeemed?: number;
+    /** Số tiền giảm từ điểm đổi */
+    pointsDiscount?: number;
 }
