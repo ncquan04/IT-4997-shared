@@ -281,6 +281,20 @@ export class Contacts {
         URL: `${Contacts.BRANCH_PATH}/${id}`,
         METHOD: "GET",
       }),
+      CREATE: {
+        URL: `${Contacts.BRANCH_PATH}`,
+        METHOD: "POST",
+        BODY: ["name", "address", "phone", "managerId", "isActive", "rentCost"],
+      },
+      UPDATE: (id: string) => ({
+        URL: `${Contacts.BRANCH_PATH}/${id}`,
+        METHOD: "PATCH",
+        BODY: ["name", "address", "phone", "managerId", "isActive", "rentCost"],
+      }),
+      DELETE: (id: string) => ({
+        URL: `${Contacts.BRANCH_PATH}/${id}`,
+        METHOD: "DELETE",
+      }),
       UPDATE_STATUS: (id: string) => ({
         URL: `${Contacts.BRANCH_PATH}/${id}/status`,
         METHOD: "PATCH",
