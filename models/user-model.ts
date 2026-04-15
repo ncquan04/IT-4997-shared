@@ -36,6 +36,7 @@ export interface IUser {
   baseSalary?: number;
   startDate?: number;
   isActive?: boolean;
+  dependants?: number;
 }
 
 export class User implements IUser {

@@ -18,6 +18,15 @@ export interface IPayroll {
   baseSalary: number;
   allowances: number;
   deductions: number;
+  // ─── Insurance & Tax ───────────────────────────────────────────
+  grossSalary: number;
+  dependants: number;
+  insuranceBase: number;
+  employeeInsurance: number;
+  employerInsurance: number;
+  taxableIncome: number;
+  personalIncomeTax: number;
+  // ──────────────────────────────────────────────────────────────
   actualSalary: number;
   status: PayrollStatus;
   note?: string;
