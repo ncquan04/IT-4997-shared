@@ -507,6 +507,11 @@ export class Contacts {
                 URL: `${Contacts.PAYROLL_PATH}/generate`,
                 METHOD: "POST",
             },
+            EXPORT: {
+                URL: `${Contacts.PAYROLL_PATH}/export`,
+                METHOD: "GET",
+                QUERY: ["month", "year", "branchId", "format"],
+            },
             UPDATE_STATUS: (id: string) => ({
                 URL: `${Contacts.PAYROLL_PATH}/${id}/status`,
                 METHOD: "PATCH",
