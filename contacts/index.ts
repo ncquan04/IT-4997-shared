@@ -38,6 +38,10 @@ export class Contacts {
                 URL: `${Contacts.AUTH_PATH}/logout`,
                 METHOD: "POST",
             },
+            ME: {
+                URL: `${Contacts.AUTH_PATH}/me`,
+                METHOD: "GET",
+            },
             ADMIN_PROTECTED: {
                 URL: `${Contacts.AUTH_PATH}/admin-protected`,
                 METHOD: "GET",
