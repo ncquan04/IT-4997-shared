@@ -15,9 +15,10 @@ export interface IUser {
   _id: string;
   role: UserRole;
   userName: string;
-  password: string;
+  password?: string;
+  googleId?: string;
   email: string;
-  phoneNumber: string;
+  phoneNumber?: string;
   address: string[];
   dateOfBirth: number; //timestamp
   verifyCode: string;
