@@ -15,7 +15,8 @@ export interface IStockTransfer {
     toBranchId: string;
     items: IStockTransferItem[];
     status: (typeof STATUS_TRANSFER)[keyof typeof STATUS_TRANSFER];
-    createdBy: string;
-    approvedBy?: string;
+    createdBy?: string | null;
+    approvedBy?: string | null;
     note: string;
+    orderId?: string | null;
 }
