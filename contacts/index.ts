@@ -15,6 +15,7 @@ export class Contacts {
     static STOCK_PATH = "api/stock";
     static STOCK_IMPORT_PATH = "api/stock-imports";
     static STOCK_EXPORT_PATH = "api/stock-exports";
+    static STOCK_TRANSFER_PATH = "api/stock-transfers";
     static WARRANTY_PATH = "api/warranty";
     static SUPPLIER_PATH = "api/suppliers";
     static COUPON_PATH = "api/coupons";
@@ -384,6 +385,24 @@ export class Contacts {
             },
             UPDATE_STATUS: (id: string) => ({
                 URL: `${Contacts.STOCK_EXPORT_PATH}/${id}/status`,
+                METHOD: "PATCH",
+            }),
+        },
+        STOCK_TRANSFER: {
+            GET_ALL: {
+                URL: `${Contacts.STOCK_TRANSFER_PATH}`,
+                METHOD: "GET",
+            },
+            GET_DETAIL: (id: string) => ({
+                URL: `${Contacts.STOCK_TRANSFER_PATH}/${id}`,
+                METHOD: "GET",
+            }),
+            CREATE: {
+                URL: `${Contacts.STOCK_TRANSFER_PATH}`,
+                METHOD: "POST",
+            },
+            UPDATE_STATUS: (id: string) => ({
+                URL: `${Contacts.STOCK_TRANSFER_PATH}/${id}/status`,
                 METHOD: "PATCH",
             }),
         },
